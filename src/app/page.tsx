@@ -1,12 +1,11 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import GKC from "@/assets/gkc.png"
 
 import {
@@ -19,36 +18,9 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  ChevronRight,
   Star,
-  PhoneIcon,
-  PhoneCallIcon,
 } from "lucide-react"
 
-// Image component with loading state
-const ImageWithLoading = ({ src, alt, fill = false, className = "", priority = false, ...props }) => {
-  const [isLoading, setIsLoading] = useState(true)
-
-  return (
-    <div className={`relative ${fill ? "w-full h-full" : ""} overflow-hidden`}>
-      {isLoading && (
-        <div
-          className={`absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-shimmer ${className}`}
-          style={{ backgroundSize: "200% 100%" }}
-        />
-      )}
-      <Image
-        src={src || "/placeholder.svg"}
-        alt={alt}
-        fill={fill}
-        className={`${className} ${isLoading ? "opacity-0" : "opacity-100 transition-opacity duration-500"}`}
-        priority={priority}
-        onLoadingComplete={() => setIsLoading(false)}
-        {...props}
-      />
-    </div>
-  )
-}
 
 export default function RealEstatePortfolio() {
   return (
@@ -144,7 +116,7 @@ export default function RealEstatePortfolio() {
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative aspect-square w-full max-w-md mx-auto">
-                <ImageWithLoading
+                <Image
                   src={GKC}
                   alt="Real estate agent portrait"
                   fill
@@ -340,7 +312,7 @@ export default function RealEstatePortfolio() {
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="relative h-12 w-12 rounded-full overflow-hidden">
-                    <ImageWithLoading
+                    <Image
                       src="https://images.unsplash.com/photo-1629888401525-0d11ff26881f?q=80&w=100&h=100"
                       alt="Client"
                       fill
@@ -367,7 +339,7 @@ export default function RealEstatePortfolio() {
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="relative h-12 w-12 rounded-full overflow-hidden">
-                    <ImageWithLoading
+                    <Image
                       src="https://images.unsplash.com/photo-1528164907495-0c9a3bf6af37?q=80&w=100"
                       alt="Client"
                       fill
@@ -394,7 +366,7 @@ export default function RealEstatePortfolio() {
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="relative h-12 w-12 rounded-full overflow-hidden">
-                    <ImageWithLoading
+                    <Image
                       src="https://images.unsplash.com/photo-1487309078313-fad80c3ec1e5?q=80&w=100"
                       alt="Client"
                       fill
@@ -501,7 +473,7 @@ export default function RealEstatePortfolio() {
                     </div>
                     <div>
                       <h3 className="font-medium">Phone</h3>
-                      <p className="text-muted-foreground">(555) 123-4567</p>
+                      <p className="text-muted-foreground">(416) 554-4296</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -510,7 +482,7 @@ export default function RealEstatePortfolio() {
                     </div>
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <p className="text-muted-foreground">Govinda@eliteproperties.com</p>
+                      <p className="text-muted-foreground">govinda@everestrealtyltd.ca</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
