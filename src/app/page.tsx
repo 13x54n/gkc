@@ -56,9 +56,11 @@ export default function RealEstatePortfolio() {
               Contact
             </Link>
           </nav>
-          <Button size="sm" onClick={() => window.open("tel:+14165544296")} className="bg-black text-white">
-            <Phone className=" h-4 w-4" /> Call Now
-          </Button>
+          <a href="tel:+14165544296">
+            <Button size="sm" className="bg-black text-white">
+              <Phone className=" h-4 w-4" /> Call Now
+            </Button>
+          </a>
         </div>
       </header>
 
@@ -149,9 +151,11 @@ export default function RealEstatePortfolio() {
                     <span>Tel: (905) 956-4449</span>
                   </li>
                   <li>
-                    <Button size="sm" onClick={() => window.open("tel:+14165544296")} className="bg-white text-black mt-4">
-                      <Phone className=" h-4 w-4" /> Call Now
-                    </Button>
+                    <a href="tel:+14165544296">
+                      <Button size="sm" className="bg-white text-black mt-4">
+                        <Phone className=" h-4 w-4" /> Call Now
+                      </Button>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -291,7 +295,7 @@ export default function RealEstatePortfolio() {
         <LatestListings />
 
         {/* Testimonials */}
-        <section id="testimonials" className="py-12 md:py-20 bg-muted/50 border-b">
+        <section id="testimonials" className="py-12 md:py-15 md:pb-20 bg-muted/50 border-b">
           <div className="container">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Client Testimonials</h2>
