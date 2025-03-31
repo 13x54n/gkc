@@ -56,27 +56,8 @@ export default function RealEstatePortfolio() {
               Contact
             </Link>
           </nav>
-          <Button size="sm" onClick={() => window.open("tel:+14165544296")} className="hidden md:inline-flex bg-black text-white">
-            <Phone className="mr-2 h-4 w-4" /> Call Now
-          </Button>
-          <Button variant="outline" size="icon" className="md:hidden">
-            <span className="sr-only">Toggle menu</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6"
-            >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
+          <Button size="sm" onClick={() => window.open("tel:+14165544296")} className="bg-black text-white">
+            <Phone className=" h-4 w-4" /> Call Now
           </Button>
         </div>
       </header>
@@ -123,7 +104,7 @@ export default function RealEstatePortfolio() {
           {/* Background image with overlay */}
           <div className="absolute inset-0 z-0">
             <Image src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80" alt="" fill className="object-cover opacity-90" priority />
-            <div className="absolute inset-0 bg-black/83" /> 
+            <div className="absolute inset-0 bg-black/83" />
           </div>
 
           <div className="container relative z-10">
@@ -166,6 +147,11 @@ export default function RealEstatePortfolio() {
                   </li>
                   <li className="flex items-center gap-3">
                     <span>Tel: (905) 956-4449</span>
+                  </li>
+                  <li>
+                    <Button size="sm" onClick={() => window.open("tel:+14165544296")} className="bg-white text-black mt-4">
+                      <Phone className=" h-4 w-4" /> Call Now
+                    </Button>
                   </li>
                 </ul>
               </div>
@@ -302,7 +288,7 @@ export default function RealEstatePortfolio() {
           </div>
         </section> */}
 
-        <LatestListings/>
+        <LatestListings />
 
         {/* Testimonials */}
         <section id="testimonials" className="py-12 md:py-20 bg-muted/50 border-b">

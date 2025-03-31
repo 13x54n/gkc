@@ -261,7 +261,7 @@ export default function LatestListings() {
                         <div key={property.id} className="flex-none w-[280px] sm:w-[300px] px-2 snap-start">
                             <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg h-full p-0 gap-0">
                                 <CardHeader className="p-0">
-                                    <div className="relative h-40 w-full">
+                                    <div className="relative h-45 w-full">
                                         <Image
                                             src={property.imageUrl || "/placeholder.svg"}
                                             alt={property.address}
