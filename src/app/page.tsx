@@ -21,9 +21,11 @@ import {
   Star,
 } from "lucide-react"
 import LatestListings from "@/components/latest-listings"
+import { useState } from "react"
 
 
 export default function RealEstatePortfolio() {
+  const [agreed, setAgreed] = useState(false);
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header/Navigation */}
@@ -560,6 +562,17 @@ export default function RealEstatePortfolio() {
                       </label>
                       <Textarea id="message" placeholder="Your message" rows={4} />
                     </div>
+                    <div className="space-y-2">
+                      <label className="flex items-start gap-2">
+                        <input
+                          type="checkbox"
+                          checked={agreed}
+                          onChange={() => setAgreed(!agreed)}
+                          className="w-4 h-4 mt-1"
+                        />
+                        <span className="text-sm text-gray-700">I agree to receive marketing and customer service calls and text messages from EVEREST REALTY LTD.. Consent is not a condition of purchase. Msg/data rates may apply. Msg frequency varies. Reply STOP to unsubscribe. Privacy Policy & Terms of Service.</span>
+                      </label>
+                    </div>
                     <Button type="submit" className="w-full bg-black text-white">
                       Send Message
                     </Button>
@@ -581,7 +594,10 @@ export default function RealEstatePortfolio() {
                 <span className="text-xl font-bold">Everest Realty LTD.</span>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Your trusted partner in real estate, helping you find the perfect property for your needs.
+                The trademarks REALTOR®, REALTORS®, and the REALTOR® logo are controlled by The Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA.
+              </p>
+              <p className="text-sm text-muted-foreground mb-4">
+                The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA.
               </p>
             </div>
             <div>
@@ -662,10 +678,10 @@ export default function RealEstatePortfolio() {
               © {new Date().getFullYear()} Everest Realty LTD.. All rights reserved.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
+              <Link href="/privacypolicy" className="text-sm text-muted-foreground hover:text-foreground">
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
+              <Link href="/termsofservice" className="text-sm text-muted-foreground hover:text-foreground">
                 Terms of Service
               </Link>
             </div>
