@@ -220,7 +220,7 @@ export default function LatestListings() {
                 </div>
 
                 {/* Navigation Arrows */}
-                <div className="absolute top-1/2 left-20 z-10 mt-16 sm:mt-0">
+                <div className="absolute top-1/2 left-20 z-10 mt-16 sm:mt-0 hidden sm:flex">
                     <Button
                         variant="outline"
                         size="icon"
@@ -232,7 +232,7 @@ export default function LatestListings() {
                     </Button>
                 </div>
 
-                <div className="absolute top-1/2 right-20 z-10 mt-16 sm:mt-0">
+                <div className="absolute top-1/2 right-20 z-10 mt-16 sm:mt-0 hidden sm:flex">
                     <Button
                         variant="outline"
                         size="icon"
@@ -243,6 +243,7 @@ export default function LatestListings() {
                         <span className="sr-only">Scroll right</span>
                     </Button>
                 </div>
+
 
                 {/* Scrollable Container with drag functionality */}
                 <div
@@ -268,7 +269,7 @@ export default function LatestListings() {
                                             fill
                                             className="object-cover"
                                         />
-                                        
+
                                     </div>
                                 </CardHeader>
                                 <CardContent className="p-4">
@@ -277,7 +278,7 @@ export default function LatestListings() {
                                         <MapPin className="h-3 w-3 mr-1" />
                                         <span className="text-xs">{property.city}</span>
                                     </div>
-                                    
+
                                     <div className="text-lg font-bold text-primary">{property.price}</div>
                                 </CardContent>
                             </Card>
