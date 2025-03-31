@@ -6,7 +6,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Elite Properties - Real Estate Portfolio",
+  title: "Govinda Khatri, EVEREST REALTY LTD. | MISSISSAUGA Real Estate Agent: Houses, Condos and Homes",
   description: "Professional real estate agent portfolio showcasing properties and services",
 }
 
@@ -17,6 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="shortcut icon" href="/logo.png" type="image/png" />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
