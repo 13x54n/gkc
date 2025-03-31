@@ -20,13 +20,14 @@ import {
   Linkedin,
   Star,
 } from "lucide-react"
+import LatestListings from "@/components/latest-listings"
 
 
 export default function RealEstatePortfolio() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header/Navigation */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full border-b bg-white">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Image
@@ -118,9 +119,15 @@ export default function RealEstatePortfolio() {
         </section> */}
 
         {/* About Section */}
-        <section id="about" className="py-12 md:py-20 bg-muted/50 border-b">
-          <div className="container">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+        <section id="about" className="py-12 md:py-20 border-b relative overflow-hidden">
+          {/* Background image with overlay */}
+          <div className="absolute inset-0 z-0">
+            <Image src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80" alt="" fill className="object-cover opacity-90" priority />
+            <div className="absolute inset-0 bg-black/83" /> 
+          </div>
+
+          <div className="container relative z-10">
+            <div className="grid md:grid-cols-2 gap-5 items-center">
               <div className="relative aspect-square w-full max-w-md mx-auto">
                 <Image
                   src={GKC}
@@ -129,9 +136,9 @@ export default function RealEstatePortfolio() {
                   className="object-cover rounded-lg"
                 />
               </div>
-              <div className="space-y-6">
+              <div className="space-y-6 text-white">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Govinda Khatri</h2>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-lg text-gray-300">
                   With over a decade of experience in the real estate market, I've helped hundreds of clients find their
                   perfect homes, sell, and investment properties.
                 </p>
@@ -295,6 +302,8 @@ export default function RealEstatePortfolio() {
           </div>
         </section> */}
 
+        <LatestListings/>
+
         {/* Testimonials */}
         <section id="testimonials" className="py-12 md:py-20 bg-muted/50 border-b">
           <div className="container">
@@ -307,12 +316,12 @@ export default function RealEstatePortfolio() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Testimonial 1 */}
               <Card className="p-6">
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-2">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star key={star} className="h-5 w-5 fill-primary text-primary fill-amber-300 text-amber-300" />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-muted-foreground mb-2">
                   "Govinda was incredible throughout our entire home buying process. His knowledge of the local market
                   helped us find the perfect home in our desired neighborhood."
                 </p>
@@ -334,12 +343,12 @@ export default function RealEstatePortfolio() {
 
               {/* Testimonial 2 */}
               <Card className="p-6">
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-2">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star key={star} className="h-5 w-5 fill-primary text-primary fill-amber-300 text-amber-300" />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-muted-foreground mb-2">
                   "We were selling our family home of 25 years and Govinda made the process smooth and stress-free. He
                   got us multiple offers above asking price!"
                 </p>
@@ -361,12 +370,12 @@ export default function RealEstatePortfolio() {
 
               {/* Testimonial 3 */}
               <Card className="p-6">
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-2">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star key={star} className="h-5 w-5 fill-primary text-primary fill-amber-300 text-amber-300" />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-muted-foreground mb-2">
                   "As an investor, I needed an agent who understood ROI and market trends. Govinda's expertise in
                   investment properties has been invaluable to growing my portfolio."
                 </p>
