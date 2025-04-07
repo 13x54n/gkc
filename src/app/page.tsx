@@ -3,10 +3,10 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
 import GKC from "@/assets/gkc.png"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 import {
   Home,
@@ -15,18 +15,34 @@ import {
   Phone,
   Mail,
   MapPin,
-  Facebook,
-  Instagram,
-  Linkedin,
   Star,
 } from "lucide-react"
 import LatestListings from "@/components/latest-listings"
-import { useState } from "react"
 import ContactForm from "@/components/contact-form"
-
+import { useEffect } from "react"
 
 export default function RealEstatePortfolio() {
-  const [agreed, setAgreed] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true,
+      offset: 100,
+    })
+
+    // Refresh AOS on window resize
+    window.addEventListener("resize", () => {
+      AOS.refresh()
+    })
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        AOS.refresh()
+      })
+    }
+  }, [])
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header/Navigation */}
@@ -123,7 +139,7 @@ export default function RealEstatePortfolio() {
                 />
               </div>
               <div className="space-y-6 text-white">
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Govinda Khatri</h2>
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" data-aos="fade-up">Govinda Khatri</h2>
                 <p className="text-lg text-gray-300">
                   With over a decade of experience in the real estate market, I've helped hundreds of clients find their
                   perfect homes, sell, and investment properties.
@@ -301,14 +317,14 @@ export default function RealEstatePortfolio() {
         <section id="testimonials" className="py-12 md:py-15 md:pb-20 bg-muted/50 border-b">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Client Testimonials</h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" data-aos="fade-up">Client Testimonials</h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto" data-aos="fade-up">
                 Hear what my clients have to say about their experience working with me.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Testimonial 1 */}
-              <Card className="p-6">
+              <Card className="p-6" data-aos="fade-up">
                 <div className="flex items-center gap-2 mb-2">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star key={star} className="h-5 w-5 fill-primary text-primary fill-amber-300 text-amber-300" />
@@ -335,7 +351,7 @@ export default function RealEstatePortfolio() {
               </Card>
 
               {/* Testimonial 2 */}
-              <Card className="p-6">
+              <Card className="p-6" data-aos="fade-up">
                 <div className="flex items-center gap-2 mb-2">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star key={star} className="h-5 w-5 fill-primary text-primary fill-amber-300 text-amber-300" />
@@ -362,7 +378,7 @@ export default function RealEstatePortfolio() {
               </Card>
 
               {/* Testimonial 3 */}
-              <Card className="p-6">
+              <Card className="p-6" data-aos="fade-up">
                 <div className="flex items-center gap-2 mb-2">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star key={star} className="h-5 w-5 fill-primary text-primary fill-amber-300 text-amber-300" />
@@ -395,14 +411,14 @@ export default function RealEstatePortfolio() {
         <section id="services" className="py-16 md:py-24 border-b">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">My Services</h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" data-aos="fade-up">My Services</h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto" data-aos="fade-up">
                 Comprehensive real estate services tailored to meet your specific needs.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Service 1 */}
-              <Card className="p-6 gap-2">
+              <Card className="p-6 gap-2" data-aos="fade-up">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 mb-2">
                   <Home className="h-6 w-6 text-primary" />
                 </div>
@@ -414,7 +430,7 @@ export default function RealEstatePortfolio() {
               </Card>
 
               {/* Service 2 */}
-              <Card className="p-6 gap-2">
+              <Card className="p-6 gap-2" data-aos="fade-up">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 mb-2">
                   <Building2 className="h-6 w-6 text-primary" />
                 </div>
@@ -426,7 +442,7 @@ export default function RealEstatePortfolio() {
               </Card>
 
               {/* Service 3 */}
-              <Card className="p-6 gap-2">
+              <Card className="p-6 gap-2" data-aos="fade-up">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 mb-2">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
@@ -444,19 +460,19 @@ export default function RealEstatePortfolio() {
         <section className="py-16 md:py-24 bg-primary text-primary-foreground border-b">
           <div className="container">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div className="space-y-2">
+              <div className="space-y-2" data-aos="fade-up">
                 <div className="text-4xl font-bold">500+</div>
                 <div className="text-primary-foreground/80">Properties Sold</div>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2" data-aos="fade-up">
                 <div className="text-4xl font-bold">$250M+</div>
                 <div className="text-primary-foreground/80">Sales Volume</div>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2" data-aos="fade-up">
                 <div className="text-4xl font-bold">10+</div>
                 <div className="text-primary-foreground/80">Years Experience</div>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2" data-aos="fade-up">
                 <div className="text-4xl font-bold">98%</div>
                 <div className="text-primary-foreground/80">Client Satisfaction</div>
               </div>
@@ -468,7 +484,7 @@ export default function RealEstatePortfolio() {
         <section id="contact" className="py-16 md:py-24">
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12">
-              <div>
+              <div data-aos="fade-up">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Get In Touch</h2>
                 <p className="text-lg text-muted-foreground mb-8">
                   Whether you're looking to buy, sell, or just have questions about the market, I'm here to help. Reach
@@ -502,6 +518,13 @@ export default function RealEstatePortfolio() {
                       <p className="text-muted-foreground">735 TWAIN AVE #2, MISSISSAUGA, ON, L5W1X1</p>
                     </div>
                   </div>
+
+                  <p className="text-sm text-muted-foreground mb-4">
+                    The trademarks REALTOR®, REALTORS®, and the REALTOR® logo are controlled by The Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA.
+                  </p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA.
+                  </p>
                 </div>
               </div>
               <ContactForm />
@@ -513,63 +536,7 @@ export default function RealEstatePortfolio() {
       {/* Footer */}
       <footer className="border-t bg-muted/50">
         <div className="container py-8 md:py-12">
-          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Home className="h-6 w-6 text-primary" />
-                <span className="text-xl font-bold">Everest Realty LTD.</span>
-              </div>
-              <p className="text-sm text-muted-foreground mb-4">
-                The trademarks REALTOR®, REALTORS®, and the REALTOR® logo are controlled by The Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA.
-              </p>
-              <p className="text-sm text-muted-foreground mb-4">
-                The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-medium mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="#about" className="text-muted-foreground hover:text-foreground">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#listings" className="text-muted-foreground hover:text-foreground">
-                    Listings
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#services" className="text-muted-foreground hover:text-foreground">
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#testimonials" className="text-muted-foreground hover:text-foreground">
-                    Testimonials
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#contact" className="text-muted-foreground hover:text-foreground">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-medium mb-4">Subscribe</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Subscribe to our newsletter for the latest property listings and market updates.
-              </p>
-              <form className="space-y-2">
-                <Input placeholder="Your email address" />
-                <Button type="submit" className="w-full bg-black text-white">
-                  Subscribe
-                </Button>
-              </form>
-            </div>
-          </div>
-          <div className="border-t mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Everest Realty LTD.. All rights reserved.
             </p>

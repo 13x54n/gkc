@@ -213,8 +213,8 @@ export default function LatestListings() {
         <section id="listings" className="py-12 md:py-20 relative border-b">
             <div className="container">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Latest Listings</h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4" data-aos="fade-up">Latest Listings</h2>
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto" data-aos="fade-up">
                         Explore our newest properties on the market. Quality homes in prime locations throughout Mississauga.
                     </p>
                 </div>
@@ -259,7 +259,7 @@ export default function LatestListings() {
                     onTouchEnd={stopDragging}
                 >
                     {listings.map((property) => (
-                        <div key={property.id} className="flex-none w-[280px] sm:w-[300px] px-2 snap-start">
+                        <div key={property.id} className="flex-none w-[280px] sm:w-[300px] px-2 snap-start" data-aos="fade-up">
                             <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg h-full p-0 gap-0">
                                 <CardHeader className="p-0">
                                     <div className="relative h-45 w-full">
