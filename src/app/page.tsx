@@ -22,6 +22,7 @@ import {
 } from "lucide-react"
 import LatestListings from "@/components/latest-listings"
 import { useState } from "react"
+import ContactForm from "@/components/contact-form"
 
 
 export default function RealEstatePortfolio() {
@@ -480,7 +481,7 @@ export default function RealEstatePortfolio() {
                     </div>
                     <div>
                       <h3 className="font-medium">Phone</h3>
-                      <p className="text-muted-foreground">(416) 554-4296</p>
+                      <p className="text-muted-foreground">(416) 554-4296 | (905) 956-4449</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -489,7 +490,7 @@ export default function RealEstatePortfolio() {
                     </div>
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <p className="text-muted-foreground">govinda@everestrealtyltd.ca</p>
+                      <p className="text-muted-foreground">govkha@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -498,87 +499,12 @@ export default function RealEstatePortfolio() {
                     </div>
                     <div>
                       <h3 className="font-medium">Office</h3>
-                      <p className="text-muted-foreground">123 Real Estate Blvd, Los Angeles, CA 90001</p>
+                      <p className="text-muted-foreground">735 TWAIN AVE #2, MISSISSAUGA, ON, L5W1X1</p>
                     </div>
                   </div>
                 </div>
-                <div className="flex gap-4 mt-8">
-                  <Link
-                    href="#"
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-muted hover:bg-muted/80"
-                  >
-                    <Facebook className="h-5 w-5" />
-                    <span className="sr-only">Facebook</span>
-                  </Link>
-                  <Link
-                    href="#"
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-muted hover:bg-muted/80"
-                  >
-                    <Instagram className="h-5 w-5" />
-                    <span className="sr-only">Instagram</span>
-                  </Link>
-                  <Link
-                    href="#"
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-muted hover:bg-muted/80"
-                  >
-                    <Linkedin className="h-5 w-5" />
-                    <span className="sr-only">LinkedIn</span>
-                  </Link>
-                </div>
               </div>
-              <div>
-                <Card className="p-6">
-                  <h3 className="text-xl font-bold mb-4">Send Me a Message</h3>
-                  <form className="space-y-4">
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <label htmlFor="name" className="text-sm font-medium">
-                          Name
-                        </label>
-                        <Input id="name" placeholder="Your name" />
-                      </div>
-                      <div className="space-y-2">
-                        <label htmlFor="email" className="text-sm font-medium">
-                          Email
-                        </label>
-                        <Input id="email" type="email" placeholder="Your email" />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="phone" className="text-sm font-medium">
-                        Phone
-                      </label>
-                      <Input id="phone" placeholder="Your phone number" />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="subject" className="text-sm font-medium">
-                        Subject
-                      </label>
-                      <Input id="subject" placeholder="What is this regarding?" />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium">
-                        Message
-                      </label>
-                      <Textarea id="message" placeholder="Your message" rows={4} />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="flex items-start gap-2">
-                        <input
-                          type="checkbox"
-                          checked={agreed}
-                          onChange={() => setAgreed(!agreed)}
-                          className="w-4 h-4 mt-1"
-                        />
-                        <span className="text-sm text-gray-700">I agree to receive marketing and customer service calls and text messages from EVEREST REALTY LTD.. Consent is not a condition of purchase. Msg/data rates may apply. Msg frequency varies. Reply STOP to unsubscribe. Privacy Policy & Terms of Service.</span>
-                      </label>
-                    </div>
-                    <Button type="submit" className="w-full bg-black text-white">
-                      Send Message
-                    </Button>
-                  </form>
-                </Card>
-              </div>
+              <ContactForm />
             </div>
           </div>
         </section>
@@ -631,43 +557,13 @@ export default function RealEstatePortfolio() {
               </ul>
             </div>
             <div>
-              <h3 className="font-medium mb-4">Services</h3>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Residential Sales
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Investment Properties
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Property Management
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Market Analysis
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Home Valuation
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
               <h3 className="font-medium mb-4">Subscribe</h3>
               <p className="text-sm text-muted-foreground mb-4">
                 Subscribe to our newsletter for the latest property listings and market updates.
               </p>
               <form className="space-y-2">
                 <Input placeholder="Your email address" />
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full bg-black text-white">
                   Subscribe
                 </Button>
               </form>
